@@ -1,0 +1,27 @@
+1. The software was programmed on Ubuntu 14.04 system with OpenCV 2.4.9 and GUI was designed by Qt.
+
+2. Once the GUI is opened, the ratio of infection area can be predicted and saved as .txt file by both new selected training dataset or existing training dataset. The user defined training data can be 
+   recorded by "Training data selection".
+   (a). Select the folder contains all the training image, double click then press open. 
+   (b). Left press or right press mouse and draw rectangle on the image, which label the healthy region and infected region respectively. The number after'Number of training data' on GUI shows the total 
+        number of pixels selected inside the rectangles. 
+   (c). Once all the training images are labelled, the training data will be saved automatically into 'train.txt', and the first three columns are R,G and B value for each pixel, the fourth one is group  number. 
+
+3.  Click 'Test' button, and a dialog will be poped up for the selection the folder that contains images for prediction. The resulting image will be displayed with red colour labelled the infected area for demonstration. Press any key to preceed. The 'train_recommand.txt" is the file contains the training data used for the published paper. 
+    THe resulting image with red labels will be saved in 'output_img' folder and the ratio data with correspondant image file names will be saved in 'Ratio.txt'.
+
+4. Click 'Infection length' and select the folder contains the resulting image with red colour labelled the infected region, the resulting images will be displayed with retangles fitted to the infected region and the estimated value of the length of infection will be saved in 'Height.txt'.
+
+5. Click 'OK' to exit. 
+
+6. This software has been tested on both Ubuntu 14.04 and Windows 7 machine, but the OpenCV library path is for Ubuntu system in the .pro file, which for example needs to be changed to:
+   INCLUDEPATH += D:\opencv\release\install\opencv2 \
+                  D:\opencv\release\install\include \
+
+                  LIBS += -LD:\opencv\release\install\x86\mingw\bin \
+
+                  -lopencv_core249 -lopencv_imgproc249 -lopencv_highgui249 -lopencv_ml249 -lopencv_video249 -lopencv_features2d249 -lopencv_calib3d249 -lopencv_objdetect249 -lopencv_contrib249 
+                  -lopencv_legacy249 -lopencv_flann249 -lopencv_nonfree249
+
+
+
